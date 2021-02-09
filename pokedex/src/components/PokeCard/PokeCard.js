@@ -20,6 +20,8 @@ width: 100px;
 height: 50px;
 font-size: 10px;
 border-radius: 10px;
+outline: none;
+cursor: pointer;
 &:hover {
   background-color: blue;
   color: white;
