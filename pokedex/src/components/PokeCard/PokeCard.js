@@ -1,6 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import Charmander from '../../img/004.png'
+import Weedle from '../../img/010.png'
+import Beedril from '../../img/015.png'
+import Pidgey from '../../img/016.png'
+import Rattata from '../../img/019.png'
+import Spearow from '../../img/021.png'
+import Ekans from '../../img/023.png'
 import Pikachu from '../../img/025.png'
+import Sandshrew from '../../img/027.png'
+import Nidoran from '../../img/029.png'
+import Squirtle from '../../img/007.png'
+import Caterpie from '../../img/010.png'
+import Nidoqueen from '../../img/031.png'
+import Nidorino from '../../img/033.png'
 
 const Botão = styled.button`
 width: 100px;
@@ -52,97 +65,111 @@ export default function PokeCard(props) {
             <Botão>Detalhes</Botão>
           </DivBttn>          
         </Card>                
-        <Card><img src={Pikachu}/>
+        <Card><img src={Charmander}/>
+        <PokeName>Charmander</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
-        <Card><img src={Pikachu}/>
-          <DivBttn>
-            <Botão>Adicionar a Pokedex</Botão>
-            <Botão>Detalhes</Botão>
-          </DivBttn>  
-        </Card>
-        <Card>
-        <img src={Pikachu}/>
-          <DivBttn>
-            <Botão>Adicionar a Pokedex</Botão>
-            <Botão>Detalhes</Botão>
-          </DivBttn>  
-        </Card>
-        <Card>
-        <img src={Pikachu}/>
+        <Card><img src={Squirtle}/>
+        <PokeName>Squirtle</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
         <Card>
-        <img src={Pikachu}/>
+        <img src={Beedril}/>
+        <PokeName>Beedril</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
         <Card>
-        <img src={Pikachu}/>
+        <img src={Caterpie}/>
+        <PokeName>Caterpie</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
         <Card>
-        <img src={Pikachu}/>
+        <img src={Ekans}/>
+        <PokeName>Ekans</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
         <Card>
-        <img src={Pikachu}/>
+        <img src={Nidoqueen}/>
+        <PokeName>Nidoqueen</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
         <Card>
-        <img src={Pikachu}/>
+        <img src={Nidoran}/>
+        <PokeName>Nidoran</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
         <Card>
-        <img src={Pikachu}/>
+        <img src={Nidorino}/>
+        <PokeName>Nidorino</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
         <Card>
-        <img src={Pikachu}/>
+        <img src={Pidgey}/>
+        <PokeName>Pidgey</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
         <Card>
-        <img src={Pikachu}/>
+        <img src={Rattata}/>
+        <PokeName>Rattata</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
         <Card>
-        <img src={Pikachu}/>
+        <img src={Sandshrew}/>
+        <PokeName>Sandshrew</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
           </DivBttn>  
         </Card>
         <Card>
-        <img src={Pikachu}/>
+        <img src={Spearow}/>
+        <PokeName>Spearow</PokeName>
+          <DivBttn>
+            <Botão>Adicionar a Pokedex</Botão>
+            <Botão>Detalhes</Botão>
+          </DivBttn>  
+        </Card>
+        <Card>
+        <img src={Squirtle}/>
+        <PokeName>Squirtle</PokeName>
+          <DivBttn>
+            <Botão>Adicionar a Pokedex</Botão>
+            <Botão>Detalhes</Botão>
+          </DivBttn>  
+        </Card>
+        <Card>
+        <img src={Weedle}/>
+        <PokeName>Weedle</PokeName>
           <DivBttn>
             <Botão>Adicionar a Pokedex</Botão>
             <Botão>Detalhes</Botão>
