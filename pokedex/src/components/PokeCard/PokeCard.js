@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Pikachu from '../img/025.png'
+import Pikachu from '../../img/025.png'
 
 const Botão = styled.button`
 width: 100px;
