@@ -5,21 +5,24 @@ import PokeCard from "../components/PokeCard/PokeCard";
 import Footer from "../components/Footer/Footer";
 import Home from "../Pages/Home/Home";
 import Pokedex from "../Pages/Pokedex/Pokedex";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 export default function Routes() {
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
-        <Header />
-        <PokeCard />
         <Route exact path="/">
           <Home />
         </Route>
         <Route exact path="/pokedex">
           <Pokedex />
         </Route>
-        <Footer />
+        <Route>
+          <ErrorPage />
+        </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
