@@ -64,7 +64,11 @@ export default function PokeCard(props) {
           {pokemon.sprites && <img src={pokemon.sprites.front_default} />}
           <PokeName>{pokemon.name}</PokeName>
           <DivButton>
-            <Button onClick={props.addPokemon}>Adicionar a Pokedex</Button>
+            <Button onClick={props.actionButton}>
+              {props.nameButton === "adc"
+                ? "Adicionar a Pokedex"
+                : "Remover da pokedex"}
+            </Button>
             <Button onClicl={props.detailPokemon}>Detalhes</Button>
           </DivButton>
         </Card>

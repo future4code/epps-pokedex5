@@ -42,13 +42,17 @@ export default function Home() {
 
   const renderPokemons = listPokemons.map((pokemon) => {
     return (
-      <PokeCard pokemon={pokemon.name} addPokemon={() => addPokemon(pokemon)} />
+      <PokeCard pokemon={pokemon.name} actionButton={() => addPokemon(pokemon)} nameButton="adc"/>
     );
   });
 
   useEffect(() => {
     getPokemons();
   }, []);
+
+  useEffect(() => {
+    console.log('useEffect ',listPokemons);
+  }, [listPokemons]);
 
   return <DivContent>{renderPokemons}</DivContent>;
 }
