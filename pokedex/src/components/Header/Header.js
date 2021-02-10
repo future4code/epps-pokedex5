@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import { goToHome } from "../../routes/Coordinator";
+import { goToHome, goToPokedex } from "../../routes/Coordinator";
 
 const DivContent = styled.div`
   display: flex;
@@ -22,7 +22,8 @@ export default function Header() {
   return (
     <div>
       <DivContent>
-        <ButtonHome onClick={() => goToHome(history)}>Pokedex</ButtonHome>
+        <ButtonHome onClick={() => goToHome(history)}>Home</ButtonHome>
+        <ButtonHome onClick={() => goToPokedex(history)}>Pokedex</ButtonHome>
       </DivContent>
     </div>
   );
