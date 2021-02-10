@@ -7,9 +7,9 @@ import DetalhesLayout from '../../components/DetalhesLayout/DetalhesLayout'
 export default function Detalhes() {
   return (
     <div>
-      <Header/>
+      
       <DetalhesLayout/>
-      <Footer/>
+      
     </div>
   )
 }

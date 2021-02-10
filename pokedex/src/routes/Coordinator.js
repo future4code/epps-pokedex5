@@ -5,3 +5,8 @@ export function goToHome(history) {
 export function goToPokedex(history) {
   history.push("/pokedex");
 }
+
+export function goToDetalhes(history) {
+  history.push("/Detalhes");
+}
+
