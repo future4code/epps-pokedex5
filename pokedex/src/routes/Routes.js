@@ -4,28 +4,27 @@ import Footer from "../components/Footer/Footer";
 import Home from "../Pages/Home/Home";
 import Pokedex from "../Pages/Pokedex/Pokedex";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import DetalhesLayout from "../Pages/Pagina de Detalhes/Detalhes";
-import Detalhes from "../Pages/Pagina de Detalhes/Detalhes";
+import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 
 export default function Routes() {
   return (
     <BrowserRouter>
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/pokedex">
-            <Pokedex />
-          </Route>
-          <Route>
-            <ErrorPage />
-          </Route>
-          <Route exact path="/Detalhes">
-            <DetalhesLayout />
-          </Route>
-        </Switch>
-        <Footer />
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/pokedex">
+          <Pokedex />
+        </Route>
+        <Route exact path={"/DetailsPage/:pokemonId"}>
+          <DetailsPage />
+        </Route>
+        <Route>
+          <ErrorPage />
+        </Route>
+      </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
