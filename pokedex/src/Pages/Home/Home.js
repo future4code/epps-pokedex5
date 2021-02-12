@@ -7,6 +7,7 @@ import PokeCard from "../../components/PokeCard/PokeCard";
 
 import { usePokedexWallet } from "../../contexts/ctxPokedex";
 import { usePokemonHome } from "../../contexts/ctxPokemonsHome";
+import { goToPokemonDetail } from "../../routes/Coordinator";
 
 const DivContent = styled.div`
   display: flex;
@@ -57,6 +58,7 @@ export default function Home() {
 
   useEffect(() => {
     getPokemons();
+    console.log(PokemonsHome);
   }, []);
 
   const renderPokemons = PokemonsHome.map((pokemon) => {
@@ -66,6 +68,7 @@ export default function Home() {
         pokemon={pokemon.name}
         actionButton={() => addPokemon(pokemon)}
         nameButton="adc"
+        detailPokemon={() => goToPokemonDetail(history, pokemon.name)}
       />
     );
   });
