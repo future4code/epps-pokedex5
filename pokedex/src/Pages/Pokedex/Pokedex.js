@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { usePokedexWallet } from "../../contexts/ctxPokedex";
+
 import PokeCard from "../../components/PokeCard/PokeCard";
+
+import { usePokedexWallet } from "../../contexts/ctxPokedex";
+import { usePokemonHome } from "../../contexts/ctxPokemonsHome";
 
 const DivContent = styled.div`
   display: flex;
@@ -13,11 +16,14 @@ const DivContent = styled.div`
 
 export default function Pokedex() {
   const { PokedexWallet, setPokedexWallet } = usePokedexWallet();
+  const { PokemonsHome, setPokemonsHome } = usePokemonHome();
 
   const removePokemon = (pokemon) => {
     const newArray = PokedexWallet.filter((pokeFilt) => {
       return pokeFilt !== pokemon;
     });
+
+    setPokemonsHome([...PokemonsHome, pokemon]);
 
     setPokedexWallet(newArray);
   };

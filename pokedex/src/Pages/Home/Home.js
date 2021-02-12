@@ -20,17 +20,23 @@ export default function Home() {
   const {
     PokemonsHome,
     setPokemonsHome,
-    getPokemonsFirstTime,
+    FirstTime,
+    setFirstTime,
   } = usePokemonHome([]);
   const { PokedexWallet, setPokedexWallet } = usePokedexWallet([]);
   const history = useHistory();
 
   const getPokemons = () => {
+    if (!FirstTime) {
+      return;
+    }
+
     const url = "https://pokeapi.co/api/v2/pokemon/?limit=20";
     axios
       .get(url)
       .then((res) => {
         setPokemonsHome(res.data.results);
+        setFirstTime(false);
       })
       .catch((err) => {
         console.log(err);
@@ -50,7 +56,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    getPokemonsFirstTime(getPokemons);
+    getPokemons();
   }, []);
 
   const renderPokemons = PokemonsHome.map((pokemon) => {
