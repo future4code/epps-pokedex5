@@ -55,7 +55,7 @@ export default function PokeCard(props) {
 
   useEffect(() => {
     getDetailPokemon(props.pokemon);
-  }, []);
+  }, [props.pokemon]);
 
   return (
     <div>
@@ -69,7 +69,7 @@ export default function PokeCard(props) {
                 ? "Adicionar a Pokedex"
                 : "Remover da pokedex"}
             </Button>
-            <Button onClicl={props.detailPokemon}>Detalhes</Button>
+            <Button onClick={props.detailPokemon}>Detalhes</Button>
           </DivButton>
         </Card>
       </DivCenter>
