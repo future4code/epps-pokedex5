@@ -1,19 +1,26 @@
 import React, { useContext, createContext, useState } from "react";
 
-export const PokemonsHomeContext = createContext();
+const PokemonsHomeContext = createContext();
 
-export function PokemonsHomeProvider({ childrens }) {
-  const [pokemonsHome, setPokemonsHome] = useState([]);
+export default function PokemonsHomeProvider({ children }) {
+  const [PokemonsHome, setPokemonsHome] = useState([]);
 
   return (
-    <PokemonsHomeContext.Provider value={{ pokemonsHome, setPokemonsHome }}>
-      {childrens}
+    <PokemonsHomeContext.Provider value={{ PokemonsHome, setPokemonsHome }}>
+      {children}
     </PokemonsHomeContext.Provider>
   );
 }
 
-export default function usePokemonHome() {
+export function usePokemonHome() {
   const context = useContext(PokemonsHomeContext);
-  const { pokemonsHome, setPokemonsHome } = context;
-  return { pokemonsHome, setPokemonsHome };
+  const { PokemonsHome, setPokemonsHome } = context;
+
+  function getPokemonsFirstTime (callback)  {
+    if (!PokemonsHome[0]) {
+      callback();
+    }
+  };
+
+  return { PokemonsHome, setPokemonsHome, getPokemonsFirstTime };
 }

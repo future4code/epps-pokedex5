@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import PokeCard from "../../components/PokeCard/PokeCard";
 import axios from "axios";
+
+import PokeCard from "../../components/PokeCard/PokeCard";
+
 import { usePokedexWallet } from "../../contexts/ctxPokedex";
+import { usePokemonHome } from "../../contexts/ctxPokemonsHome";
 
 const DivContent = styled.div`
   display: flex;
@@ -14,7 +17,11 @@ const DivContent = styled.div`
 `;
 
 export default function Home() {
-  const [listPokemons, setListPokemons] = useState([]);
+  const {
+    PokemonsHome,
+    setPokemonsHome,
+    getPokemonsFirstTime,
+  } = usePokemonHome([]);
   const { PokedexWallet, setPokedexWallet } = usePokedexWallet([]);
   const history = useHistory();
 
@@ -23,7 +30,7 @@ export default function Home() {
     axios
       .get(url)
       .then((res) => {
-        setListPokemons(res.data.results);
+        setPokemonsHome(res.data.results);
       })
       .catch((err) => {
         console.log(err);
@@ -33,20 +40,20 @@ export default function Home() {
   const addPokemon = (pokemon) => {
     setPokedexWallet([...PokedexWallet, pokemon]);
 
-    let newArray = [...listPokemons];
+    let newArray = [...PokemonsHome];
     const index = newArray.findIndex((i) => {
       return i.name === pokemon.name;
     });
     newArray.splice(index, 1);
 
-    setListPokemons(newArray);
+    setPokemonsHome(newArray);
   };
 
   useEffect(() => {
-    getPokemons();
+    getPokemonsFirstTime(getPokemons);
   }, []);
 
-  const renderPokemons = listPokemons.map((pokemon) => {
+  const renderPokemons = PokemonsHome.map((pokemon) => {
     return (
       <PokeCard
         key={pokemon}
